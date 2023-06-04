@@ -33,6 +33,7 @@ return {
       { "<leader>sb", function() require("telescope.builtin").current_buffer_fuzzy_find() end, desc = "Buffer", },
       { "<leader>vo", "<cmd>Telescope aerial<cr>", desc = "Code Outline" },
       { "<leader>zc", function() require("telescope.builtin").colorscheme({enable_preview = true}) end, desc = "Colorscheme", },
+      { "<leader>kw", function() require("telescope.builtin").keymaps() end, desc = "Keymaps"}
     },
     config = function(_, _)
       local telescope = require "telescope"

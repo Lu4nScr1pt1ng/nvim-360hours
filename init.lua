@@ -21,8 +21,14 @@ local keymapspath = vim.fn.stdpath("config") .. "/lua/keymaps/init.lua"
 
 if not vim.loop.fs_stat(keymapspath) then
   print("[!] Error in loading keymaps(Path doesn't exist)")
-else 
+else
   vim.schedule(function()
-  require("keymaps")
+    require("keymaps")
   end)
 end
+
+
+
+vim.cmd('colorscheme slate')
+
+vim.api.nvim_set_hl(0, "LeapBackdrop", { fg = "grey" })

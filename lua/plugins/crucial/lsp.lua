@@ -33,6 +33,7 @@ return {
 
     lspzero.ensure_installed({
       'tsserver',
+      'lua_ls',
       'eslint',
       'apex_ls',
       'emmet_ls',
