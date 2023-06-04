@@ -1,6 +1,6 @@
 return {
   'VonHeikemen/lsp-zero.nvim',
-  lazy = false,
+  event = { "BufReadPre", "BufNewFile" },
   branch = 'v2.x',
   dependencies = {
     -- LSP Support
@@ -22,9 +22,11 @@ return {
 
     -- Some custom LSP config
     { 'jose-elias-alvarez/typescript.nvim' },
-    { 'Decodetalkers/csharpls-extended-lsp.nvim' }
+    { 'Decodetalkers/csharpls-extended-lsp.nvim' },
+    { 'j-hui/fidget.nvim' }
   },
   config = function()
+    require('fidget').setup()
     local lspzero = require('lsp-zero').preset({})
 
     lspzero.on_attach(function(client, bufnr)
@@ -150,14 +152,21 @@ return {
     local cmp_action = require('lsp-zero').cmp_action()
 
     cmp.setup({
+      preselect = 'item',
+      completion = {
+        completeopt = 'menu,menuone,noinsert'
+      },
       mapping = {
         ['<Tab>'] = cmp_action.tab_complete(),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
         ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+        ['<C-Space>'] = cmp.mapping.complete(),
       },
+
       formatting = {
         fields = { 'abbr', 'kind', 'menu' },
         format = require('lspkind').cmp_format({
-          mode = 'symbol',       -- show only symbol annotations
+          mode = 'text_symbol',  -- show only symbol annotations
           preset = 'codicons',
           maxwidth = 50,         -- prevent the popup from showing more than provided characters
           ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead

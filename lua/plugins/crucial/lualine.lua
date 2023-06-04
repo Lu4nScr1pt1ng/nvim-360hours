@@ -12,7 +12,7 @@ return {
         component_separators = {},
         section_separators = {},
         disabled_filetypes = {
-              statusline = { "luan", "lazy", "netrw" },
+              statusline = { "luan", "lazy", "netrw", "alpha" },
           winbar = {
             "netrw",
             "help",
