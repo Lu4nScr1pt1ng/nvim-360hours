@@ -28,6 +28,7 @@ local configs = {
     "markdown",
     "markdown_inline",
     "query",
+    "java",
     "regex",
     "vim",
     "http",

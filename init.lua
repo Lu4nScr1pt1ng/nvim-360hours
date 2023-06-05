@@ -32,3 +32,12 @@ end
 vim.cmd('colorscheme slate')
 
 vim.api.nvim_set_hl(0, "LeapBackdrop", { fg = "grey" })
+
+vim.cmd([[
+augroup FileTypeGroup
+  au! BufRead,BufNewFile *.cls,*.trigger,*.apex set filetype=apex
+augroup END
+]])
+
+vim.treesitter.language.register('java', 'apex')
+
