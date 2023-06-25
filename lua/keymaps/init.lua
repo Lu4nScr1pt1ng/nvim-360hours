@@ -52,6 +52,11 @@ map("n", "[<Space>", "O<Esc>", { desc = "Insert blank line" })
 map({ "n", "o", "x" }, "gl", "$", { desc = "Go to the last character in the line" })
 map({ "n", "o", "x" }, "gh", "0", { desc = "Go to the first character in the line" })
 
+
+-- tab switch
+map({"n"}, "<Tab>", "<cmd>bn<cr>", { desc = "Switch buffer"})
+map({"n"}, "<S-Tab>", "<cmd>bp<cr>", { desc = "Switch buffer"})
+
 -- Super fun keymap wow!
 map({ "n" }, "<C-C>", "ciw", { desc = "Change inside word" })
 
