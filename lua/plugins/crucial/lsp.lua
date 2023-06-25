@@ -23,7 +23,8 @@ return {
     -- Some custom LSP config
     { 'jose-elias-alvarez/typescript.nvim' },
     { 'Decodetalkers/csharpls-extended-lsp.nvim' },
-    { 'j-hui/fidget.nvim' }
+    { 'j-hui/fidget.nvim', branch = 'legacy' }
+
   },
   config = function()
     require('fidget').setup()

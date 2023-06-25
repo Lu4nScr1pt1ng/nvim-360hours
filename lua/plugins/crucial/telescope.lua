@@ -4,7 +4,7 @@ return {
     dependencies = {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       'nvim-lua/plenary.nvim',
-      -- "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
       -- "nvim-telescope/telescope-project.nvim",
       -- "ahmedkhalf/project.nvim",
       -- "cljoly/telescope-repo.nvim",
@@ -22,7 +22,7 @@ return {
       { "<leader>ff", function() require("telescope.builtin").find_files() end, desc = "Find Files" },
       -- { "<leader>fo", "<cmd>Telescope frecency theme=dropdown previewer=false<cr>", desc = "Recent" },
       { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-      -- { "<leader>fr", "<cmd>Telescope file_browser<cr>", desc = "Browser" },
+      { "<leader>fr", "<cmd>Telescope file_browser<cr>", desc = "Browser" },
       { "<leader>gc", "<cmd>Telescope conventional_commits<cr>", desc = "Conventional Commits" },
       { "<leader>zs", "<cmd>Telescope lazy<cr>", desc = "Search Plugins" },
       -- { "<leader>ps", "<cmd>Telescope repo list<cr>", desc = "Search" },
@@ -138,7 +138,7 @@ return {
       }
       telescope.setup(opts)
       telescope.load_extension "fzf"
-      -- telescope.load_extension "file_browser"
+      telescope.load_extension "file_browser"
       -- telescope.load_extension "project"
       -- telescope.load_extension "projects"
       telescope.load_extension "aerial"
