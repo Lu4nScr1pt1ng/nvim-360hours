@@ -78,4 +78,4 @@ local function close_explorer_buffers()
   end
 end
 
-map('n', '<Leader>fe', close_explorer_buffers, { silent = true })
+map('n', '<Leader>nt', close_explorer_buffers, { silent = true })
