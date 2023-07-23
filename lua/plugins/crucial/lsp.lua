@@ -35,6 +35,7 @@ return {
     end)
 
     lspzero.ensure_installed({
+      'svelte',
       'tsserver',
       'lua_ls',
       'eslint',
@@ -54,12 +55,14 @@ return {
     lspconfig.eslint.setup({
       single_file_support = false,
       on_attach = function(client, bufnr)
-        print('hello eslint')
+        print('[!]Loaded eslint')
       end
     })
 
+    lspconfig.svelte.setup{}
+
     lspconfig.emmet_ls.setup {
-      filetypes = { "css", "html", "javascript", "javascriptreact", "less", "sass", "scss", "typescriptreact" },
+      filetypes = { "css", "html", "svelte", "javascript", "javascriptreact", "less", "sass", "scss", "typescriptreact" },
       init_options = {
         html = {
           options = {

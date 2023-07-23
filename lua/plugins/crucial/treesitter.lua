@@ -24,6 +24,7 @@ local configs = {
     "c_sharp",
     "dockerfile",
     "svelte",
+    "scss",
     "lua",
     "markdown",
     "markdown_inline",
