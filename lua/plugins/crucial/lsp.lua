@@ -23,7 +23,7 @@ return {
     -- Some custom LSP config
     { 'jose-elias-alvarez/typescript.nvim' },
     { 'Decodetalkers/csharpls-extended-lsp.nvim' },
-    { 'j-hui/fidget.nvim', branch = 'legacy' }
+    { 'j-hui/fidget.nvim',                       branch = 'legacy' }
 
   },
   config = function()
@@ -43,6 +43,7 @@ return {
       'emmet_ls',
       'jsonls',
       'csharp_ls',
+      'clangd',
       'dockerls',
       'tailwindcss',
       'rust_analyzer'
@@ -59,7 +60,10 @@ return {
       end
     })
 
-    lspconfig.svelte.setup{}
+    lspconfig.svelte.setup {}
+
+
+    lspconfig.clangd.setup {}
 
     lspconfig.emmet_ls.setup {
       filetypes = { "css", "html", "svelte", "javascript", "javascriptreact", "less", "sass", "scss", "typescriptreact" },
