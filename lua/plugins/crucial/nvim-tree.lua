@@ -32,7 +32,7 @@ return {
 
       root_folder_label = function(path)
         local project = vim.fn.fnamemodify(path, ":t")
-        return " " .. string.upper(project)
+        return icons.ui.Home .. string.upper(project)
       end,
 
       indent_markers = {
@@ -56,7 +56,7 @@ return {
             empty_open = icons.ui.EmptyFolderOpen,
             open = icons.ui.FolderOpen,
             symlink = icons.ui.FolderSymlink,
-            symlink_open = " ",
+            symlink_open = icons.ui.FolderSymlink,
             arrow_open = icons.ui.TriangleShortArrowDown,
             arrow_closed = icons.ui.TriangleShortArrowRight,
           },
