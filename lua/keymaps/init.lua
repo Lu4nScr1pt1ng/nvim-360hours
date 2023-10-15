@@ -6,8 +6,7 @@ map("n", "<leader>dl", "<cmd>lua require'dap'.step_into()<CR>", { silent = true 
 map("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<CR>", { silent = true })
 map("n", "<leader>dk", "<cmd>lua require'dap'.step_out()<CR>", { silent = true })
 map("n", "<leader>d<space>", "<cmd>lua require'dap'.continue()<CR>", { silent = true })
-map("n", "<leader>dbp", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { silent = true })
-map("n", "<leader>dd", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", { silent = true })
+map("n", "<leader>db", "<cmd> DapToggleBreakpoint<CR>", { silent = true })
 map("n", "<leader>de", "<cmd>lua require'dap'.terminate()<CR>", { silent = true })
 map("n", "<leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { silent = true })
 
@@ -22,6 +21,9 @@ map("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
 map("n", "<A-k>", ":m .-2<CR>==")
 map("v", "<A-k>", ":m '<-2<CR>gv=gv")
 map("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
+
+-- exit terminal mode
+map('t', '<Esc>', "<C-\\><C-n>", { silent = true })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map({ "n", "x", "o" }, "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
@@ -65,8 +67,8 @@ map({ "n", "o", "x" }, "gh", "0", { desc = "Go to the first character in the lin
 
 
 -- tab switch
-map({"n"}, "<Tab>", "<cmd>bn<cr>", { desc = "Switch buffer"})
-map({"n"}, "<S-Tab>", "<cmd>bp<cr>", { desc = "Switch buffer"})
+map({ "n" }, "<Tab>", "<cmd>bn<cr>", { desc = "Switch buffer" })
+map({ "n" }, "<S-Tab>", "<cmd>bp<cr>", { desc = "Switch buffer" })
 
 -- Super fun keymap wow!
 map({ "n" }, "<C-C>", "ciw", { desc = "Change inside word" })
