@@ -41,7 +41,6 @@ return {
       'eslint',
       'apex_ls',
       'emmet_ls',
-      'codelldb',
       'jsonls',
       'csharp_ls',
       'html',
