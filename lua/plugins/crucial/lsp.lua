@@ -43,6 +43,7 @@ return {
       'emmet_ls',
       'jsonls',
       'csharp_ls',
+      'html_ls',
       'clangd',
       'dockerls',
       'tailwindcss',
@@ -62,6 +63,7 @@ return {
 
     lspconfig.svelte.setup {}
 
+    lspconfig.html_ls.setup {}
 
     lspconfig.clangd.setup {}
 

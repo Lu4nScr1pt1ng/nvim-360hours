@@ -1,5 +1,16 @@
 local map = vim.keymap.set
 
+
+-- nvim/dap
+map("n", "<leader>dl", "<cmd>lua require'dap'.step_into()<CR>", { silent = true })
+map("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<CR>", { silent = true })
+map("n", "<leader>dk", "<cmd>lua require'dap'.step_out()<CR>", { silent = true })
+map("n", "<leader>d<space>", "<cmd>lua require'dap'.continue()<CR>", { silent = true })
+map("n", "<leader>dbp", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { silent = true })
+map("n", "<leader>dd", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", { silent = true })
+map("n", "<leader>de", "<cmd>lua require'dap'.terminate()<CR>", { silent = true })
+map("n", "<leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { silent = true })
+
 -- better up/down
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
