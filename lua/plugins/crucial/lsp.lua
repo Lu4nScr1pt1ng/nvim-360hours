@@ -65,7 +65,17 @@ return {
 
     lspconfig.html.setup {}
 
-    lspconfig.clangd.setup {}
+    lspconfig.clangd.setup {
+
+      cmd = {
+        "clangd", -- SEE: clangd --help-hidden for possible options
+        "--clang-tidy",
+        "--completion-style=bundled",
+        "--cross-file-rename",
+        "--header-insertion=iwyu",
+      },
+
+    }
 
     lspconfig.emmet_ls.setup {
       filetypes = { "css", "html", "svelte", "javascript", "javascriptreact", "less", "sass", "scss", "typescriptreact" },
